@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Littlemoods Art</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="images/top_gif.gif" alt="top-gif" class="top-gif">
+    <h1>Littlemoods Art</h1>
+    <div class="tabs">
+        <button class="tablinks">Home</button>
+        <button class="tablinks">Projects</button>
+        <button class="tablinks">About</button>
+    </div>
+    <!-- <button id="aboutBtn">About</button> -->
+  </header>
+
+  <!-- About Panel -->
+  <section id="aboutPanel" class="hidden">
+    <h2>About the Artist</h2>
+    <p>
+      Hello! I'm the artist behind Littlemoods — creating digital art and illustrations.
+      I focus on expressive character art and fantasy worlds. Contact me for collaborations,
+      commissions, or just to say hi!
+    </p>
+  </section>
+
+  <!-- Right Side Buttons -->
+  <div class="side-buttons">
+    <a href="https://littlemoods.itch.io/" target="_blank">
+        <img src="images/itch-io-svgrepo-com.png" alt="itch-icon">
+    </a>
+    <a href="https://www.artstation.com/littlemoods" target="_blank">
+        <img src="images/artstation-svgrepo-com.png" alt="artstation-icon">
+    </a>
+    <button id="emailBtn">
+        <img src="images/email-svgrepo-com.png" alt="email-icon">
+    </button>
+  </div>
+
+  <!-- Gallery -->
+  <main id="gallery" class="gallery hidden">
+    <img src="gallery/0.jpeg" alt="Art 1">
+    <img src="gallery/1.jpeg" alt="Art 2">
+    <img src="gallery/2.jpeg" alt="Art 3">
+    <img src="gallery/3.jpeg" alt="Art 4">
+    <img src="gallery/4.jpeg" alt="Art 5">
+    <img src="gallery/5.jpeg" alt="Art 6">
+    <img src="gallery/6.jpeg" alt="Art 7">
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="hidden">
+    <img id="lightboxImg" alt="Expanded Art">
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
