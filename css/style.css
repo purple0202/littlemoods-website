@@ -9,10 +9,30 @@
 
 @font-face {
     font-family: 'headerFont';
-    src : url('../fonts/Clarendon LT Regular.ttf') format('truetype');
+    src : url('../fonts/Clarendon\ Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
+.panel {
+    width: 100%;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 1;
+    transform: scale(1);
+    position: absolute;  /* stack panels on top of each other */
+    /* top: 0; */
+    left: 0;
+  }
+
+  .panel.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+  }
+/* 
+.hidden {
+    display: none !important;
+  } */
 
 body {
   background: white;
@@ -82,24 +102,60 @@ header h1 {
     text-decoration: underline;
   }
 
-  .tabs button:active {
-    text-decoration: bold;
+  .tabs button .active {
+    text-decoration: underline;
   }
 
 /* About section */
 #aboutPanel {
-  padding: 20px 40px;
-  background: #111;
-  border-top: 1px solid #333;
-  line-height: 1.6;
-  display: none;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    margin-left: 50%;
+    transform: translate(-50%);
+    height: auto;
 }
-#aboutPanel.visible {
+
+#aboutPanel #about-text {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    color:black;
+    /* width: 30% */
+}
+
+#aboutPanel #profile-image {
+    /* padding: 15px; */
+    border: 2px solid #222;
+    height: auto;
+    width: 70%;
+    object-fit: contain;
+}
+
+#aboutPanel #about-text h2 {
+    font-family: 'headerFont';
+    font-size: 40px;
+}
+
+#aboutPanel #about-text h3 {
+    font-family: 'headerFont';
+    font-size: 35px;
+    color: rgb(188, 188, 188)
+}
+
+#aboutPanel #about-text p {
+    margin-top: 40px;
+    font-size: 25px;
+}
+/* #aboutPanel.visible {
   display: block;
-}
+} */
 
 /* Side Buttons */
 .side-buttons {
+    z-index: 1;
   position: fixed;
   right: 20px;
   top: 50%;

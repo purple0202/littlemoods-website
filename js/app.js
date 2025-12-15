@@ -3,6 +3,8 @@ const tab_btns = tabs.querySelectorAll(".tablinks");
 const gallery = document.querySelector(".gallery");
 const about = document.querySelector("#aboutPanel");
 
+console.log(gallery, about);
+
 console.log(tab_btns);
 
 const home_btn = tab_btns[0];
@@ -12,7 +14,8 @@ const about_btn = tab_btns[2];
 home_btn.classList.add("active");
 
 function on_about_click() {
-    console.log("clicked");
+    console.log(gallery, about);
+    console.log(about_btn);
     gallery.classList.add("hidden");
     about.classList.remove("hidden");
     home_btn.classList.remove("active");
@@ -20,6 +23,7 @@ function on_about_click() {
 }
 
 function on_home_click() {
+    console.log(gallery, about);
     gallery.classList.remove("hidden");
     about.classList.add("hidden");
     home_btn.classList.add("active");
