@@ -128,7 +128,7 @@ header h1 {
 
 #aboutPanel #profile-image {
     /* padding: 15px; */
-    border: 2px solid #222;
+    border: 2px solid #F1F1F1;
     height: auto;
     width: 70%;
     object-fit: contain;
@@ -203,7 +203,7 @@ header h1 {
   object-position: top;
   cursor: pointer;
   transition: transform 0.3s ease;
-  border: 2px solid #222;
+  border: 2px solid #F1F1F1;
 }
 
 .gallery img:hover {
