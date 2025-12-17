@@ -102,7 +102,7 @@ header h1 {
     text-decoration: underline;
   }
 
-  .tabs button .active {
+  .tabs button.active {
     text-decoration: underline;
   }
 
