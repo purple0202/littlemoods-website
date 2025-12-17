@@ -7,12 +7,17 @@ const lightboxImg = document.getElementById("lightboxImg");
 const closeBtn = document.getElementById("close");
 const images = gallery.querySelectorAll('img');
 
+let galleryActive = true;
+
 console.log(gallery, about);
 
 console.log(tab_btns);
 
 images.forEach(img => {
   img.addEventListener("click", () => {
+    if(!galleryActive) {
+        return;
+    }
     lightboxImg.src = img.src;
     lightbox.classList.add("active");
 
@@ -24,6 +29,10 @@ images.forEach(img => {
 function closeLightbox() {
   lightbox.classList.remove("active");
 
+  if(!galleryActive) {
+    images.forEach(i => i.style.pointerEvents = "none")
+    return;
+    }
   // Re-enable gallery interaction
   images.forEach(i => i.style.pointerEvents = "auto");
 }
@@ -31,7 +40,7 @@ function closeLightbox() {
 closeBtn.addEventListener("click", closeLightbox);
 
 lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) closeLightbox();
+  closeLightbox();
 });
 
 document.addEventListener("keydown", (e) => {
@@ -76,20 +85,29 @@ const about_btn = tab_btns[2];
 home_btn.classList.add("active");
 
 function on_about_click() {
+    galleryActive = false;
     console.log(gallery, about);
     console.log(about_btn);
     gallery.classList.add("hidden");
     about.classList.remove("hidden");
     home_btn.classList.remove("active");
     about_btn.classList.add("active");
+    about.style.zIndex = '0';
+    gallery.style.zIndex = '2';
+    closeLightbox();
+    
 }
 
 function on_home_click() {
+    galleryActive = true;
     console.log(gallery, about);
-    gallery.classList.remove("hidden");
     about.classList.add("hidden");
+    gallery.classList.remove("hidden");
     home_btn.classList.add("active");
     about_btn.classList.remove("active");
+    about.style.zIndex = '2';
+    gallery.style.zIndex = '0';
+    closeLightbox();
 }
 
 home_btn.addEventListener("click", on_home_click);
