@@ -87,8 +87,8 @@ document.addEventListener("keydown", (e) => {
 // });
 
 const home_btn = tab_btns[0];
-const project_btn = tab_btns[1];
-const about_btn = tab_btns[2];
+// const project_btn = tab_btns[1];
+const about_btn = tab_btns[1];
 
 home_btn.classList.add("active");
 
