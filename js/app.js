@@ -1,17 +1,25 @@
 const tabs = document.querySelector(".tabs");
 const tab_btns = tabs.querySelectorAll(".tablinks");
 const gallery = document.querySelector(".gallery");
+const gallery_panel = document.querySelector(".gallery panel")
 const about = document.querySelector("#aboutPanel");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
 const closeBtn = document.getElementById("close");
 const images = gallery.querySelectorAll('img');
+const gallery_size = 24;
 
 let galleryActive = true;
 
 console.log(gallery, about);
 
 console.log(tab_btns);
+
+function add_to_gallery(i, ){
+    const gallery_img = document.createElement("img");
+    gallery_img.src = ``;
+
+}
 
 images.forEach(img => {
   img.addEventListener("click", () => {
