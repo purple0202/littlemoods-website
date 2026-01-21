@@ -68,11 +68,10 @@ header {
   display: block;
 }
 
-.wave-group{
-  /* animation: waveMove 25s linear infinite; */
+/* .wave-group{
   transform-origin: center;
   fill: white;
-}
+} */
 
 @keyframes waveMove {
   from {
