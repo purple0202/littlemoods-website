@@ -9,9 +9,16 @@
 
 @font-face {
     font-family: 'headerFont';
-    src : url('../fonts/Clarendon\ Regular.woff') format('woff');
+    src : url('../fonts/Fredoka-SemiBold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+  font-family: 'contentFont';
+  src : url('../fonts/IBMPlexMono-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .panel {
@@ -35,8 +42,8 @@
   } */
 
 body {
-  background: white;
-  color: #fff;
+  background: rgb(255, 239, 217);
+  /* color: #fff; */
   font-family: Arial, sans-serif;
 }
 
@@ -48,7 +55,7 @@ header {
   justify-content: center;
   align-items: center;
   padding: 20px 40px;
-  background: #F1F1F1;
+  background: white;
 }
 
 .top-gif {
@@ -67,8 +74,9 @@ header {
 header h1 {
     font-family: 'headerFont';
     text-align: center;
+    font-size: 55px;
     /* margin-top: 200px; */
-    color: black;
+    color: rgb(229, 109, 96);
 
 }
 
@@ -91,6 +99,8 @@ header h1 {
   }
   
   .tabs button {
+    font-family: 'contentFont';
+    color: rgb(229, 109, 96);
     background: none;
     border: none;
     font-size: 16px;
@@ -108,7 +118,7 @@ header h1 {
 
 /* About section */
 #aboutPanel {
-    margin-top: 25px;
+    margin-top: 67px;
     /* display: flex; */
     /* justify-content: center; */
     /* align-items: center; */
@@ -139,7 +149,7 @@ header h1 {
 
 #aboutPanel #profile-image {
     /* padding: 15px; */
-    border: 2px solid #F1F1F1;
+    /* border: 2px solid #F1F1F1; */
     /* height: auto; */
     /* height: 100%; */
     height: 380px;
@@ -154,17 +164,20 @@ header h1 {
 #aboutPanel #about-text h2 {
     font-family: 'headerFont';
     font-size: 40px;
+    color: rgb(229, 109, 96);
 }
 
 #aboutPanel #about-text h3 {
     font-family: 'headerFont';
     font-size: 35px;
-    color: rgb(188, 188, 188)
+    /* color: rgb(188, 188, 188) */
+    color: rgb(229, 141, 131);
 }
 
 #aboutPanel #about-text p {
+    font-family: 'contentFont';
     margin-top: 40px;
-    font-size: 25px;
+    font-size: 20px;
 }
 /* #aboutPanel.visible {
   display: block;
@@ -221,7 +234,7 @@ header h1 {
   object-position: center;
   /* cursor: pointer; */
   transition: opacity 0.5s ease, transform 0.5s ease;;
-  border: 2px solid #F1F1F1;
+  border: 2px solid rgb(239, 192, 187);
 }
 
 .gallery img:hover {
