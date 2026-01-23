@@ -1,12 +1,13 @@
 const tabs = document.querySelector(".tabs");
 const tab_btns = tabs.querySelectorAll(".tablinks");
-const gallery = document.querySelector(".gallery");
+const gallery = document.getElementById("gallery_container");
+const in_gallery = document.querySelector(".gallery");
 const gallery_panel = document.querySelector(".gallery panel")
 const about = document.querySelector("#aboutPanel");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
 const closeBtn = document.getElementById("close");
-const images = gallery.querySelectorAll('img');
+const images = in_gallery.querySelectorAll('img');
 const gallery_size = 24;
 
 let galleryActive = true;
@@ -39,10 +40,12 @@ function closeLightbox() {
 
   if(!galleryActive) {
     images.forEach(i => i.style.pointerEvents = "none")
+    // gallery.style.display = "none"
     return;
     }
   // Re-enable gallery interaction
   images.forEach(i => i.style.pointerEvents = "auto");
+  // gallery.style.display = "grid"
 }
 
 closeBtn.addEventListener("click", closeLightbox);
@@ -54,6 +57,29 @@ lightbox.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeLightbox();
 });
+
+
+function showPanel(panelToShow, panelToHide) {
+  // Show target
+  panelToShow.classList.remove("hidden");
+  requestAnimationFrame(() => {
+    panelToShow.classList.add("active");
+  });
+
+  // Hide current
+  panelToHide.classList.remove("active");
+
+  panelToHide.addEventListener(
+    "transitionend",
+    () => {
+      panelToHide.classList.add("hidden");
+    },
+    { once: true }
+  );
+  console.log(panelToShow.classList)
+  console.log(panelToHide.classl)
+  // window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
 // images.forEach(img => {
 //   img.addEventListener("click", () => {
@@ -118,5 +144,21 @@ function on_home_click() {
     closeLightbox();
 }
 
-home_btn.addEventListener("click", on_home_click);
-about_btn.addEventListener("click", on_about_click);
+// home_btn.addEventListener("click", on_home_click);
+// about_btn.addEventListener("click", on_about_click);
+
+home_btn.addEventListener("click", () => {
+  showPanel(gallery, about);
+  // about.classList.add("hidden");
+  // gallery.classList.remove("hidden");
+  home_btn.classList.add("active");
+  about_btn.classList.remove("active");
+});
+
+about_btn.addEventListener("click", () => {
+  showPanel(about, gallery);
+  // gallery.classList.add("hidden");
+  // about.classList.remove("hidden");
+  home_btn.classList.remove("active");
+  about_btn.classList.add("active");
+});

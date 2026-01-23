@@ -20,17 +20,24 @@
 .panel {
     width: 100%;
     transition: opacity 0.5s ease, transform 0.5s ease;
-    opacity: 1;
+    opacity: 0;
     transform: scale(1);
     position: absolute;
     /* top: 0; */
     left: 0;
   }
 
+  .panel.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
   .panel.hidden {
-    opacity: 0;
+    /* opacity: 0;
     transform: scale(0.95);
-    pointer-events: none;
+    pointer-events: none; */
+    display: none;
   }
 /* 
 .hidden {
@@ -140,6 +147,8 @@ header h1 {
     text-decoration: underline;
   }
 
+
+  
 /* About section */
 #aboutPanel {
     margin-top: 67px;
@@ -240,7 +249,7 @@ header h1 {
 }
 
 /* Gallery */
-.gallery {
+.gallery{
     margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -270,11 +279,10 @@ header h1 {
   pointer-events: none;
 }
 
-.gallery.hidden {
-  /* display: none; */
+/* .gallery.hidden {
+  display: none;
   pointer-events: none;
-  /* cursor: default; */
-}
+} */
 
 /* Lightbox */
 #lightbox {
