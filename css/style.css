@@ -239,6 +239,7 @@ header h1 {
   height: 30px;
   border: none;
   cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(76%) sepia(10%) saturate(4661%) hue-rotate(308deg) brightness(82%) contrast(123%);
 }
 
 .side-buttons img {
