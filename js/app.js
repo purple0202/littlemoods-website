@@ -12,6 +12,21 @@ const gallery_size = 24;
 
 let galleryActive = true;
 
+const svg = document.querySelector('.wave-divider');
+
+function updateWaves() {
+  if (window.innerWidth < 768) {
+    svg.setAttribute('viewBox', '0 0 70 100'); // 7 waves
+    console.log("smol wave");
+  } else {
+    svg.setAttribute('viewBox', '0 0 210 100'); // 21 waves
+  }
+  console.log("wave updated!");
+}
+
+window.addEventListener('resize', updateWaves);
+updateWaves();
+
 console.log(gallery, about);
 
 console.log(tab_btns);
