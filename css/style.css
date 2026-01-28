@@ -1,6 +1,6 @@
 /* Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-* { outline: 1px solid red; }
+/* * { outline: 1px solid red; } */
 
 
 @font-face {
@@ -360,6 +360,7 @@ header h1 {
     /* width: auto; */
     /* margin-left: 50%;
     transform: translate(-50%); */
+    margin-top: 0px;
     display: grid;
     grid-auto-flow: row;
     /* grid-auto-columns: max-content; */
