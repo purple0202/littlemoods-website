@@ -1,6 +1,6 @@
 /* Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-/* * { outline: 1px solid red; } */
+* { outline: 1px solid red; }
 
 
 @font-face {
@@ -352,37 +352,43 @@ header h1 {
   }
 
   #aboutPanel {
-    margin-top: 60x;
+    /* margin-top: 60px; */
     /* display: flex; */
     /* justify-content: center; */
     /* align-items: center; */
     /* width: 70%; */
     /* width: auto; */
-    margin-left: 50%;
-    transform: translate(-50%);
+    /* margin-left: 50%;
+    transform: translate(-50%); */
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
-
+    grid-auto-flow: row;
+    /* grid-auto-columns: max-content; */
+    place-items: center;
+    justify-items: center;
     align-items: center;
+    justify-content: center;
     width: 90vw;
+    /* text-align: center; */
     /* height: 50vh; */
     /* height: auto; */
 }
 
   #aboutPanel #profile-image {
     height: auto;
-    width: 30vw;
+    width: 50vw;
     object-fit: contain;
+    place-self: center;
 }
 #aboutPanel #about-text {
   /* width: 60%; */
   min-width: 0;
-  max-width: 60vw;
+  max-width: 70vw;
     padding: 0px;
     display: flex;
     flex-direction: column;
     color:black;
+  place-self: center;
+  margin-bottom: 100px;
     /* width: 30% */
 }
 }
